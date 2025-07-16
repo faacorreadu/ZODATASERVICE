@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_CONNECTIONSPROJECTION'
+define service ZUI_CONNECTIONSDB_O4 {
+  expose ZC_CONNECTIONSPROJECTION as Connectionscds;
+}

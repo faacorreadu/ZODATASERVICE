@@ -1,0 +1,51 @@
+managed implementation in class ZBP_CONNECTIONSCLASS unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_CONNECTIONSCDS alias Connectionscds
+persistent table zconnectionsdb
+draft table ZCONNECTIONSDB_D
+etag master LocalLastChangedAt
+lock master total etag ChangedAt
+authorization master( global )
+
+{
+  field ( readonly )
+   ConnectionID,
+   CreatedAt,
+   CreatedBy,
+   ChangedAt,
+   ChangedBy,
+   LocalLastChangedAt;
+
+  field ( numbering : managed )
+   ConnectionID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCONNECTIONSDB
+  {
+    ConnectionID = connection_id;
+    CarrierID = carrier_id;
+    FlightNo = flight_no;
+    DepCity = dep_city;
+    ArrCity = arr_city;
+    FlightDate = flight_date;
+    Price = price;
+    CurrencyCode = currency_code;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    ChangedBy = changed_by;
+    ChangedAt = changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Connectionscds', 
+    typeNamePlural: 'Connectionscdss'
+  }
+}
+annotate view ZC_CONNECTIONSPROJECTION with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Connectionscds', 
+    position: 10 
+  } ]
+  @UI.hidden: true
+  ConnectionID;
+  
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'CarrierID'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'CarrierID'
+  } ]
+  CarrierID;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'FlightNo'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'FlightNo'
+  } ]
+  FlightNo;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'DepCity'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'DepCity'
+  } ]
+  DepCity;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'ArrCity'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'ArrCity'
+  } ]
+  ArrCity;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #MEDIUM, 
+    label: 'FlightDate'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'FlightDate'
+  } ]
+  FlightDate;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #MEDIUM, 
+    label: 'Price'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Price'
+  } ]
+  Price;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #MEDIUM, 
+    label: 'CurrencyCode'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'CurrencyCode'
+  } ]
+  CurrencyCode;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
